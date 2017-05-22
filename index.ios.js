@@ -85,20 +85,21 @@ export default class recycleApp extends Component {
         <Text style={styles.headerText}>Can I Recycle This?</Text>
       </View>
 
-      <View>
+      <View style={styles.logoArea}>
         <Text style={styles.name}>{this.chemical()}</Text>
-        <Image style={styles.logo} />
+        <Image style={styles.image} />
+        <Text style={styles.name}>{this.state.num}</Text>
       </View>
 
       <View style={styles.mainSection}>
-        <Text style={styles.mainHeader}>Is it recycleable {this.yesOrNo()}</Text>
+        <Text style={styles.mainHeader}>Recycleable?</Text>
+        <Text style={styles.mainHeader}>{this.yesOrNo()}</Text>
         <Image style={styles.box} />
         <Text style={styles.description}>lorem empsum jdnd loofdiue ibujek hdvikhbeiw
         jasbd hbsjdhb hasjnf hbssvve</Text>
       </View>
 
       <View style={styles.slider}>
-        <Text>recycle:{this.state.num}</Text>
         <Slider
           style={styles.slider}
           value={this.state.num}
@@ -125,14 +126,19 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20
   },
+  logoArea: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   name: {
     fontSize: 15
   },
-  logo: {
+  image: {
 
   },
   mainSection: {
-
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   mainHeader: {
 
@@ -145,7 +151,7 @@ const styles = StyleSheet.create({
   },
   slider: {
     justifyContent: 'center',
-    flex: 2
+    flex: 1
   }
 });
 
