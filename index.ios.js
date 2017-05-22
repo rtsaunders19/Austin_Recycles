@@ -20,19 +20,10 @@ export default class recycleApp extends Component {
     super(props);
 
     this.state = {
-      num: 1,
-      chemicals: 'PETE',
-      description: 'something something1'
+      num: 1
     };
   }
 
-change() {
-  this.setState({
-
-  })
-}
-
-/*
   chemical() {
     let recycling = this.state.num
     switch (recycling) {
@@ -84,7 +75,7 @@ change() {
         return 'NO'
     }
   }
-  */
+
 
   render() {
     return (
@@ -114,7 +105,7 @@ change() {
           minimumValue={1}
           maximumValue={7}
           step={1}
-          onValueChange={newValue => this.setState({num: newValue })}
+          onValueChange={newValue => this.setState({ num: newValue })}
         />
       </View>
 
