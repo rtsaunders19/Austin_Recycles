@@ -20,59 +20,62 @@ export default class recycleApp extends Component {
     super(props);
 
     this.state = {
-      num: 1
+      num: 1,
+      chemical: 'PETE',
+      recycleable: 'Yes'
     };
   }
 
-  chemical() {
-    let recycling = this.state.num
-    switch (recycling) {
+  chemical(value) {
+    switch (value) {
       case 1:
-        return 'PETE'
+        this.setState({
+          num: 1,
+          chemical: 'PETE',
+          recycleable: 'Yes'
+        })
         break;
       case 2:
-        return 'HDPE'
+        this.setState({
+          num: 2,
+          chemical: 'HDPE',
+          recycleable: 'Yes'
+        })
         break;
       case 3:
-        return 'V'
+        this.setState({
+          num: 3,
+          chemical: 'V',
+          recycleable: 'No'
+        })
         break;
       case 4:
-        return 'LDPE'
+        this.setState({
+          num: 4,
+          chemical: 'LDPE',
+          recycleable: 'Yes'
+        })
         break;
       case 5:
-        return 'PP'
+        this.setState({
+          num: 5,
+          chemical: 'PP',
+          recycleable: 'Yes'
+        })
         break;
       case 6:
-        return 'PS'
+        this.setState({
+          num: 6,
+          chemical: 'PS',
+          recycleable: 'No'
+        })
         break;
       case 7:
-        return 'Other'
-    }
-  }
-
-  yesOrNo() {
-    let recycling = this.state.num
-    switch (recycling) {
-      case 1:
-        return 'YES'
-        break;
-      case 2:
-        return 'YES'
-        break;
-      case 3:
-        return 'NO'
-        break;
-      case 4:
-        return 'YES'
-        break;
-      case 5:
-        return 'YES'
-        break;
-      case 6:
-        return 'NO'
-        break;
-      case 7:
-        return 'NO'
+        this.setState({
+          num: 7,
+          chemical: 'Other',
+          recycleable: 'No'
+        })
     }
   }
 
@@ -86,14 +89,14 @@ export default class recycleApp extends Component {
       </View>
 
       <View style={styles.logoArea}>
-        <Text style={styles.name}>{this.chemical()}</Text>
+        <Text style={styles.name}>{this.state.chemical}</Text>
         <Image style={styles.image} />
         <Text style={styles.name}>{this.state.num}</Text>
       </View>
 
       <View style={styles.mainSection}>
         <Text style={styles.mainHeader}>Recycleable?</Text>
-        <Text style={styles.mainHeader}>{this.yesOrNo()}</Text>
+        <Text style={styles.mainHeader}>{this.state.recycleable}</Text>
         <Image style={styles.box} />
         <Text style={styles.description}>lorem empsum jdnd loofdiue ibujek hdvikhbeiw
         jasbd hbsjdhb hasjnf hbssvve</Text>
@@ -106,7 +109,7 @@ export default class recycleApp extends Component {
           minimumValue={1}
           maximumValue={7}
           step={1}
-          onValueChange={newValue => this.setState({ num: newValue })}
+          onValueChange={newValue => this.chemical(newValue)}
         />
       </View>
 
