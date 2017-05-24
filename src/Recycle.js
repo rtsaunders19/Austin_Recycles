@@ -48,7 +48,7 @@ class Recycle extends Component {
           num: 3,
           chemical: 'PVC (Polyvinyl Chloride)',
           recycleable: 'NO',
-          description: 'PVC is dubbed the “poison plastic” because it contains numerous toxins which it can leach throughout its entire life cycle.  Because PVC is relatively impervious to sunlight and weather, it is used to make window frames, garden hoses, arbors, raised beds and trellises. Products made using PVC plastic are not recyclable.'
+          description: 'PVC is dubbed the “poison plastic” because it contains numerous toxins which it can leach throughout its entire life cycle.  Because PVC is relatively impervious to sunlight and weather, it is used to make window frames, and garden hoses.',
         });
         break;
       case 4:
@@ -56,7 +56,7 @@ class Recycle extends Component {
           num: 4,
           chemical: 'LDPE (Low-Density Polyethylene)',
           recycleable: 'YES',
-          description: 'It is not commonly recycled, however, this is changing in many communities today as more recycling programs gear up to handle this material like the city of Austin. When recycled, LDPE plastic is used for plastic lumber, landscaping boards, garbage can liners and floor tiles.'
+          description: 'It is not commonly recycled, however, this is changing in many communities today as more recycling programs gear up to handle this material like the city of Austin. When recycled, LDPE plastic is used for plastic lumber, garbage can liners and floor tiles.'
         });
         break;
       case 5:
@@ -72,7 +72,7 @@ class Recycle extends Component {
           num: 6,
           chemical: 'PS (Polystyrene)',
           recycleable: 'NO',
-          description: 'Polystyrene is an inexpensive, lightweight and easily-formed plastic with a wide variety of uses. It is most often used to make disposable styrofoam drinking cups, take-out “clamshell” food containers, egg cartons, plastic picnic cutlery, foam packaging and those ubiquitous “peanut” foam chips used to fill shipping boxes to protect the contents.'
+          description: 'Polystyrene is an inexpensive, lightweight and easily-formed plastic with a wide variety of uses. It is most often used to make disposable styrofoam drinking cups, take-out “clamshell” food containers, egg cartons, plastic picnic cutlery, foam packaging and those ubiquitous “peanut” foam chips in packages.'
         });
         break;
       case 7:
