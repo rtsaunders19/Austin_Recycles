@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Slider
+  Slider,
+  Image
 } from 'react-native';
 import MainPage from './components/MainPage';
 
@@ -84,12 +85,9 @@ class Recycle extends Component {
      }
   }
 
-  _handlePress() {
-    this.setState({
-      num: 7
-    });
+  handlePress() {
+    console.log('Button was pressed');
   }
-
 
   render() {
     return (
@@ -116,11 +114,11 @@ class Recycle extends Component {
 
       <View style={styles.buttonArea}>
         <Button
-          style={{ fontSize: 20, color: 'white' }}
+          style={{ }}
           styleDisabled={{ color: 'red' }}
-          onPress={() => this._handlePress()}
+          onPress={this.handlePress.bind(this)}
         >
-          Press Me!
+          <Image style={styles.image} source={{ uri: 'https://www.shareicon.net/download/2016/07/12/794699_recycle-bin_512x512.png' }} />
         </Button>
       </View>
 
@@ -149,6 +147,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1
+  },
+  image: {
+    height: 50,
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   achievements: {
     fontSize: 20,
