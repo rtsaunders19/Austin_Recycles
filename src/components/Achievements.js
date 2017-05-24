@@ -10,23 +10,25 @@ class Achievements extends Component {
       <View style={styles.headerStyle}>
         <Text style={styles.headerText}>Achievements</Text>
       </View>
+      <View style={{ marginTop: 35, flex: 1 }}>
       <View style={styles.unlock}>
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
       </View>
       <View style={styles.unlock}>
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
       </View>
       <View style={styles.unlock}>
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
-        <Image style={styles.image} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+        <Image style={styles.image} source={{ uri: 'https://www.iconexperience.com/_img/g_collection_png/standard/256x256/lock.png' }} />
+      </View>
       </View>
       <View style={styles.textStyle}>
-        <Text onPress={() => Actions.recycle()}>hello</Text>
+        <Text onPress={() => Actions.recycle()}>Back</Text>
       </View>
     </View>
   );
@@ -35,7 +37,7 @@ class Achievements extends Component {
 
 const styles = StyleSheet.create({
   textStyle: {
-    paddingTop: 500
+    alignItems: 'center'
   },
   headerStyle: {
     alignItems: 'center',
@@ -54,6 +56,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 7
+  },
+  image: {
+    height: 100,
+    width: 100,
   }
 });
 

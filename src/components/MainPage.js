@@ -91,10 +91,12 @@ const styles = StyleSheet.create({
     height: 200
   },
   yes: {
-    color: '#8BC34A'
+    color: '#8BC34A',
+    fontSize: 20
   },
   no: {
-    color: 'red'
+    color: 'red',
+    fontSize: 20
   },
   3: {
     backgroundColor: 'red'
