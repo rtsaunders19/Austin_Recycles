@@ -6,7 +6,9 @@ import {
   Text,
   View,
   Slider,
-  Image
+  Image,
+  Animated,
+  Easing
 } from 'react-native';
 import MainPage from './components/MainPage';
 
@@ -20,10 +22,10 @@ class Recycle extends Component {
       chemical: 'PET (Polyethylene Terephthalate)',
       recycleable: 'YES',
       description: 'PET is one of the most commonly used plastics in consumer products, and is found in most water and pop bottles, and some packaging. It is intended for single use applications; repeated use increases the risk of leaching and bacterial growth.',
-      color: 'green'
+      color: 'green',
+      spinValue: new Animated.Value(0)
     };
   }
-
 
   onSlide(value) {
     switch (value) {
@@ -86,16 +88,43 @@ class Recycle extends Component {
   }
 
   handlePress() {
-    console.log('Button was pressed');
+    if (this.state.num === 1 || this.state.num === 2 || this.state.num === 4 || this.state.num === 5) {
+    Animated.timing(
+      this.state.spinValue, {
+      toValue: 1,
+      duration: 500,
+      easing: Easing.linear
+    }).start();
   }
+}
 
   render() {
+    const spin = this.state.spinValue.interpolate({
+       inputRange: [0, 1],
+       outputRange: ['0deg', '360deg']
+     });
     return (
     <View style={{ flex: 1, backgroundColor: '#00A5CF' }}>
+
+      <View style={[styles.headerStyle, styles[this.state.num]]}>
+        <Text style={styles.headerText}>Can I Recycle This?</Text>
+      </View>
+
+      <View style={styles.logoArea}>
+        <Text style={styles.name}>{this.state.chemical}</Text>
+        <Animated.Image
+        style={{ height: 100,
+        width: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+        transform: [{ rotate: spin }] }} source={{ uri: 'https://openclipart.org/image/2400px/svg_to_png/196353/recycle-plastic.png' }}
+        >
+        <Text style={styles.number}>{this.state.num}</Text>
+        </Animated.Image>
+      </View>
+
       <MainPage
-        onSlide={this.onSlide()}
-        num={this.state.num}
-        chemical={this.state.chemical}
         recycleable={this.state.recycleable}
         description={this.state.description}
       />
@@ -118,7 +147,7 @@ class Recycle extends Component {
           styleDisabled={{ color: 'red' }}
           onPress={this.handlePress.bind(this)}
         >
-          <Image style={styles.image} source={{ uri: 'https://www.shareicon.net/download/2016/07/12/794699_recycle-bin_512x512.png' }} />
+          <Image style={styles.buttonImage} source={{ uri: 'https://www.shareicon.net/download/2016/07/12/794699_recycle-bin_512x512.png' }} />
         </Button>
       </View>
 
@@ -131,6 +160,38 @@ class Recycle extends Component {
 }
 
 const styles = StyleSheet.create({
+  headerStyle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 60,
+    paddingTop: 25,
+    backgroundColor: '#8BC34A',
+    color: 'white'
+  },
+  headerText: {
+    fontSize: 20,
+    color: 'white'
+  },
+  logoArea: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 35
+  },
+  name: {
+    fontSize: 18,
+    color: 'white'
+  },
+  number: {
+    fontSize: 20,
+    color: 'black',
+  },
+  image: {
+    height: 100,
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20
+  },
   slider: {
     justifyContent: 'center',
     marginTop: 18
@@ -148,7 +209,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1
   },
-  image: {
+  buttonImage: {
     height: 50,
     width: 50,
     justifyContent: 'center',
@@ -157,6 +218,16 @@ const styles = StyleSheet.create({
   achievements: {
     fontSize: 20,
     color: 'gold'
+  },
+  3: {
+    backgroundColor: 'red'
+  },
+  6: {
+    backgroundColor: 'red'
+  },
+  7: {
+    backgroundColor: 'red'
   }
 });
+
 export default Recycle;
