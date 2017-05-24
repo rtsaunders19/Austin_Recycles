@@ -6,7 +6,7 @@ import Achievements from './components/Achievements';
 const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
-      <Scene key="achievements" component={Achievements} title="Your Achievements"/>
+      <Scene key="achievements" component={Achievements} title="Your Achievements" />
     </Router>
   );
 };
