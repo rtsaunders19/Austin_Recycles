@@ -33,6 +33,7 @@ class MainPage extends Component {
       <Text style={styles.description}>{this.props.description}</Text>
     </View>
   </View>
+
   </View>
     );
   }
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     paddingTop: 35
   },
   name: {
-    fontSize: 15,
+    fontSize: 18,
     color: 'white'
   },
   number: {
@@ -77,14 +78,15 @@ const styles = StyleSheet.create({
     height: 200
   },
   mainHeader: {
-    color: 'white'
+    color: 'white',
+    fontSize: 16
   },
   box: {
     flex: 1
   },
   description: {
     color: 'white',
-    fontSize: 10,
+    fontSize: 15,
     width: 290,
     height: 200
   },
