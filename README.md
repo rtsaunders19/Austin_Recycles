@@ -2,8 +2,9 @@
 React Native app that helps you know what the recycling resin numbers mean and whether or not you can recycle them. For certain numbers it depends on the city you live in, so for this app the numbers are relevant to Austin. It also keeps track of what you've recycled, unlocking items that your recycled items will be used to make
 
 #Challenges
+- UX (thank you Ronak)
 - Learning React Native again
-- Implementing firebase
+- Communicating data between two different scenes
 - Passing data up through props (able to do it in ReactJS but not React Native)
 
 #Tech used
